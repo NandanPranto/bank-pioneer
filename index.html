@@ -10,11 +10,91 @@
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-    <h1>Welcome to Pioneer Bank</h1>
-    
+    <div id="login-area">
+
+        <h1 class="text-center">Welcome to Pioneer Bank</h1>
+
+        <div class="submit-area width-700">
+
+            <h4>Login</h4>
+            <input type="text" class="form-control" placeholder="Enter your email">
+            <br>
+            <input type="password" class="form-control" placeholder="Enter your password" name="" id="">
+            <br>
+            <button id="login" class="btn btn-success">Enter</button>
+
+        </div>
+
+    </div>
+
+    <div id="transaction-area">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="deposit status">
+                    <h5>Deposit</h5>
+                    <h2>$<span id="currentDeposit">00</span></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw status">
+                    <h5>Withdraw</h5>
+                    <h2>$<span id="currentWithdraw">00</span></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance status">
+                    <h5>Balance</h5>
+                    <h2>$<span id="currentBalance">1200</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="submit-area">
+                    <h4>Deposit</h4>
+                    <input id="depositAmount" type="text" class="form-control" placeholder="$ amount you want to deposit">
+                    <br>
+                    <button id="addDeposit" class="btn btn-success" id="deposit">Deposit</button>
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <div class="submit-area">
+                    <h4>Withdraw</h4>
+                    <input id="withdrawAmount" type="text" class="form-control" placeholder="$ amount you want to withdraw">
+                    <br>
+                    <button id="addwithdraw" class="btn btn-success" id="withdraw">Withdraw</button>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <script>
+
+        // const loginBtn = document.getElementById("login");
+        // loginBtn.addEventListener("click",function(){
+        //     console.log("amake click korche");
+        // });//*EventListener* event listen/react korebe j ki kaj hocche 
+        // *addEventListener* event listener add kora ..important jinis (website: https://developer.mozilla.org/en-US/docs/Web/API/EventListener#:~:text=The%20EventListener%20interface%20represents%20an,a%20handleEvent()%20property%20function.) website e giye search dile onk event paowa jabe
+        
+        const loginBtn = document.getElementById("login");
+        loginBtn.addEventListener("click",function(){
+            const loginArea = document.getElementById("login-area");
+            loginArea.style.display = "none" ; //click>login-area id khujche>loginArea variable er vitor style e {display= none } kaj korche
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block" ;
+        });
+        
+    </script>
+     -->
+     <script src="js/scripts.js"></script>
 </body>
 </html>
