@@ -8,7 +8,7 @@ loginBtn.addEventListener("click",function(){
 });
 
 //deposit button for event handler
-const depositBtn = document.getElementById("addDeposit");
+const depositBtn = document.getElementById("addDeposit");// deposit button take dhorlam depositBtn diye
 depositBtn.addEventListener("click",function(){
     const depositNumber = getInputNumber("depositAmount");
 
@@ -24,30 +24,31 @@ depositBtn.addEventListener("click",function(){
     // const totalBalance =  totalDeposit + currentBalanceAmount;
     // document.getElementById("currentBalance").innerText = totalBalance;
 
- 
+    document.getElementById("depositAmount").value = ""; 
 
 });
 
 //withdraw button for event handler
 const withdrawBtn = document.getElementById("addwithdraw");
 withdrawBtn.addEventListener("click",function(){
-    const withdrawAmount = getInputNumber("withdrawAmount");
-    updateSpanText("currentWithdraw", depositNumber);
+    const withdrawNumber = getInputNumber("withdrawAmount");
+    updateSpanText("currentWithdraw", withdrawNumber);
+    updateSpanText("currentBalance", -1 * withdrawNumber);//withdraw korle balance reduce hobe sejnno -1 diye multiply korchi
     
-
+    document.getElementById("withdrawAmount").value = "";
 
 });
 
 function getInputNumber(id){
-    const amount = document.getElementById(id).value;
-    const amountNumber = parseFloat(amount);
-    return amountNumber;
+    const amount = document.getElementById(id).value; //ami jei id tar value k float korte chacchi sei value ta (amount) diye dhorbe 
+    const amountNumber = parseFloat(amount); //dhore float e convert korbe r seta amountNumber e rakhbe
+    return amountNumber; // sei converted id tai return korbe amountNumber nam e
 }
 
-function updateSpanText(id, depositNumber){
+function updateSpanText(id, addedNumber){//2ta parameter 1 id 2 variable (addedNumber)
     const current = document.getElementById(id).innerText;
     const currentAmount = parseFloat(current);
-    const total =  depositNumber + currentAmount;
+    const total =  addedNumber + currentAmount;//
     document.getElementById(id).innerText = total;
 }
 
